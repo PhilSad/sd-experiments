@@ -14,7 +14,7 @@
         "1": 120
       },
       "flags": {},
-      "order": 7,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -175,42 +175,45 @@
       ]
     },
     {
-      "id": 14,
-      "type": "LoadImage",
+      "id": 19,
+      "type": "PrepImageForClipVision",
       "pos": [
-        -327,
-        45
+        -80,
+        119
       ],
       "size": {
-        "0": 220,
-        "1": 320
+        "0": 315,
+        "1": 106
       },
       "flags": {},
-      "order": 2,
+      "order": 7,
       "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 30
+        }
+      ],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            30
+            31,
+            33
           ],
           "shape": 3,
           "slot_index": 0
-        },
-        {
-          "name": "MASK",
-          "type": "MASK",
-          "links": null,
-          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "LoadImage"
+        "Node name for S&R": "PrepImageForClipVision"
       },
       "widgets_values": [
-        "my_phil.jpg",
-        "image"
+        "LANCZOS",
+        "center",
+        1
       ]
     },
     {
@@ -225,7 +228,7 @@
         "1": 120
       },
       "flags": {},
-      "order": 6,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -266,7 +269,7 @@
         "1": 110
       },
       "flags": {},
-      "order": 3,
+      "order": 2,
       "mode": 0,
       "outputs": [
         {
@@ -300,7 +303,7 @@
         "1": 100
       },
       "flags": {},
-      "order": 4,
+      "order": 3,
       "mode": 0,
       "outputs": [
         {
@@ -337,32 +340,6 @@
       },
       "widgets_values": [
         "sd_xl_base_1.0.safetensors"
-      ]
-    },
-    {
-      "id": 12,
-      "type": "SaveImage",
-      "pos": [
-        1354,
-        186
-      ],
-      "size": {
-        "0": 400,
-        "1": 450
-      },
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 13
-        }
-      ],
-      "properties": {},
-      "widgets_values": [
-        "IPAdapter"
       ]
     },
     {
@@ -481,45 +458,68 @@
       ]
     },
     {
-      "id": 19,
-      "type": "PrepImageForClipVision",
+      "id": 14,
+      "type": "LoadImage",
       "pos": [
-        -80,
-        117
+        -327,
+        45
       ],
       "size": {
-        "0": 315,
-        "1": 106
+        "0": 220,
+        "1": 320
       },
       "flags": {},
-      "order": 5,
+      "order": 4,
       "mode": 0,
-      "inputs": [
-        {
-          "name": "image",
-          "type": "IMAGE",
-          "link": 30
-        }
-      ],
       "outputs": [
         {
           "name": "IMAGE",
           "type": "IMAGE",
           "links": [
-            31,
-            33
+            30
           ],
           "shape": 3,
           "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
         }
       ],
       "properties": {
-        "Node name for S&R": "PrepImageForClipVision"
+        "Node name for S&R": "LoadImage"
       },
       "widgets_values": [
-        "LANCZOS",
-        "center",
-        1
+        "Screenshot 2023-10-29 21.51.40 (1).png",
+        "image"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveImage",
+      "pos": [
+        1566,
+        159
+      ],
+      "size": {
+        "0": 400,
+        "1": 450
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "IPAdapter"
       ]
     }
   ],
